@@ -1,9 +1,8 @@
 import api from "./config"
 
-const getRandomPokemon = async () => {
-    const { data } = await api.get(`/pokemon`)
-    //console.log(data.results)
+const getAllPokemon = async () => {
+    const { data } = await api.get(`/pokemon?limit=151`)
     return data.results
 }
 
-export default getRandomPokemon
+export default getAllPokemon

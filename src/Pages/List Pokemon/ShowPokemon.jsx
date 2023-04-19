@@ -1,7 +1,7 @@
 import './ShowPokemon.css'
-import PokemonCard from '../../Components/PokemonCard/PokemonCard'
+import Pokedex from '../../Components/PokemonCardList/PokemonCardList'
 import { useState, useEffect } from 'react'
-import getRandomPokemon from '../../Service/getRandomPokemon'
+import getAllPokemon from '../../Service/getRandomPokemon'
 
 const ShowPokemon = () => {
   const [data, setData] = useState([])
@@ -12,16 +12,14 @@ const ShowPokemon = () => {
 
 
   const getPokemon = async () => {
-    const result = await getRandomPokemon()
-    console.log(result)
+    const result = await getAllPokemon()
     setData(result)
   }
 
 
   const showPokemons = () => {
-    console.log(data)
     return data.map((pokemon, idx) => {
-        <PokemonCard key={ idx } name={ pokemon.name } url={ pokemon.url } />
+        return <Pokedex key={ idx } name={ pokemon.name } url={ pokemon.url } />
     })
   }
 
@@ -30,9 +28,9 @@ const ShowPokemon = () => {
 
 
   return (
-    <>
+    <div className='container'>
         { showPokemons() }
-    </>
+    </div>
   )
 }
 

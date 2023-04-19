@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className='form'>
         <ul>
             <Link to='/'>
               <li>Login</li>
             </Link>
             <Link to='/pokemon'>
-              <li>Pokemon</li>
+              <li>Pokédex</li>
             </Link>
         </ul>
     </nav>
