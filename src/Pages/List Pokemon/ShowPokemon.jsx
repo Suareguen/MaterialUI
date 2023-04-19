@@ -9,23 +9,16 @@ const ShowPokemon = () => {
     getPokemon()
   }, [])
 
-
-
   const getPokemon = async () => {
     const result = await getAllPokemon()
     setData(result)
   }
-
 
   const showPokemons = () => {
     return data.map((pokemon, idx) => {
         return <Pokedex key={ idx } name={ pokemon.name } url={ pokemon.url } />
     })
   }
-
-
-
-
 
   return (
     <div className='container'>

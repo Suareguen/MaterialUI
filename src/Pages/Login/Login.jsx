@@ -17,7 +17,7 @@ export const LoginForm = () => {
     sx={{ color: '#f5f6f7' ,backgroundColor: grey[500], width: '850px', height:'300px', borderRadius: 8,  }}
     raised={true}
     >
-      <CardHeader title='Login'></CardHeader>
+      <CardHeader title='Login'/>
       <CardContent 
         sx={{width:'800px'}}>
         <TextField

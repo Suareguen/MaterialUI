@@ -9,7 +9,6 @@ export default function MultiActionAreaCard({ name, url }) {
   return (
     <Card sx={{ maxWidth: 345, margin: '5px' }}>
       <CardActionArea>
-
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             { name }
@@ -20,7 +19,7 @@ export default function MultiActionAreaCard({ name, url }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link to='/pokemon'>
+        <Link to={`/pokemon/${ name }`}>
          <Button 
          size="small" 
          color="primary">
