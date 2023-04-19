@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({ name, image }) {
+export default function RecipeReviewCard({ name, sprite, types }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -38,7 +38,7 @@ export default function RecipeReviewCard({ name, image }) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            P
           </Avatar>
         }
         action={
@@ -53,10 +53,11 @@ export default function RecipeReviewCard({ name, image }) {
         component="img"
         height="194"
         alt={ name }
+        image={ sprite }
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Aqui vemos que ponemos
+          { types[0] } { types[1] }
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

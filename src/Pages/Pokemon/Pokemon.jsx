@@ -14,18 +14,36 @@ useEffect(() => {
 
 const getPokemon = async () => {
     const result = await getPokemonById(pokemonId)
-    
     setData(result)
 }
 
 
 const displayPokemon = () => {
-    console.log(data.name)
-        return (
+    if( data.length !== 0 ) {
+        if(data.types.length === 1) {
+            const types = [ data.types[0].type.name ]
+            return (
+                <>
+                    <PokemonCard
+                        name={ data.name }
+                        types ={ types }
+                        sprite={ data.sprites.front_default }
+                    />
+                </>
+            )
+        } else {
+           const types = [ data.types[0].type.name, data.types[1].type.name ]
+           return (
             <>
-                <PokemonCard name={ data.name }/>
+                <PokemonCard
+                    name={ data.name }
+                    types ={ types }
+                    sprite={ data.sprites.front_default }
+                />
             </>
         )
+        }
+    }
 }
 
 
