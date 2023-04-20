@@ -5,7 +5,7 @@ import { TextField } from '@mui/material'
 const Header = () => {
   return (
     <div>
-        <h1 id='header'>Reboot Form</h1>
+        <h1 id='header'>PokeBoot</h1>
         <TextField  id="outlined-basic" label="Search Pokemon" variant="outlined" />
     </div>
   )
